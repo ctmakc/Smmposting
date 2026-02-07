@@ -212,9 +212,9 @@
 
 | Фаза | Статус |
 |---|---|
-| Фаза 1: Foundation | 🔲 Не начата |
-| Фаза 2: Temporal + First Workflow | 🔲 Не начата |
-| Фаза 3: LLM + Analysis + Generation | 🔲 Не начата |
-| Фаза 4: Publishing Pipeline | 🔲 Не начата |
-| Фаза 5: Metrics & Learning | 🔲 Не начата |
-| Фаза 6: Observability + Hardening | 🔲 Не начата |
+| Фаза 1: Foundation | DONE (22 tests) |
+| Фаза 2: Temporal + First Workflow | DONE (43 tests total, +21 new) |
+| Фаза 3: LLM + Analysis + Generation | NEXT |
+| Фаза 4: Publishing Pipeline | Pending |
+| Фаза 5: Metrics & Learning | Pending |
+| Фаза 6: Observability + Hardening | Pending |
