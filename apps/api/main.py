@@ -5,9 +5,10 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from apps.api.routes import brands, health, policies
+from apps.api.routes import brands, health, policies, workflows
 from libs.core.config import get_settings
 from libs.core.logging import setup_logging
+from libs.core.temporal import close_temporal_client
 
 
 @asynccontextmanager
@@ -15,6 +16,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     setup_logging(settings.log_level)
     yield
+    await close_temporal_client()
 
 
 def create_app() -> FastAPI:
@@ -28,6 +30,7 @@ def create_app() -> FastAPI:
     app.include_router(health.router, tags=["health"])
     app.include_router(brands.router, prefix="/brands", tags=["brands"])
     app.include_router(policies.router, prefix="/policies", tags=["policies"])
+    app.include_router(workflows.router, prefix="/workflows", tags=["workflows"])
     return app
 
 
