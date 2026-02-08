@@ -8,6 +8,7 @@ from fastapi import FastAPI
 from apps.api.routes import brands, health, ideas, metrics, policies, posts, scripts, workflows
 from libs.core.config import get_settings
 from libs.core.logging import setup_logging
+from libs.core.middleware import setup_middleware
 from libs.core.temporal import close_temporal_client
 
 
@@ -35,6 +36,7 @@ def create_app() -> FastAPI:
     app.include_router(posts.router, prefix="/posts", tags=["posts"])
     app.include_router(metrics.router, prefix="/metrics", tags=["metrics"])
     app.include_router(workflows.router, prefix="/workflows", tags=["workflows"])
+    setup_middleware(app)
     return app
 
 

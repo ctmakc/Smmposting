@@ -12,6 +12,7 @@ from apps.worker_publish.activities import (
 from apps.worker_publish.workflows import TASK_QUEUE, PublishWorkflow
 from libs.core.config import get_settings
 from libs.core.logging import setup_logging
+from libs.core.shutdown import setup_signal_handlers
 from libs.core.temporal import get_temporal_client
 
 logger = structlog.get_logger()
@@ -20,6 +21,9 @@ logger = structlog.get_logger()
 async def main() -> None:
     settings = get_settings()
     setup_logging(settings.log_level)
+
+    shutdown_event = asyncio.Event()
+    setup_signal_handlers(shutdown_event)
 
     logger.info("publish_worker_starting", task_queue=TASK_QUEUE)
     client = await get_temporal_client()
@@ -38,7 +42,9 @@ async def main() -> None:
     )
 
     logger.info("publish_worker_running", task_queue=TASK_QUEUE)
-    await worker.run()
+    async with worker:
+        await shutdown_event.wait()
+    logger.info("publish_worker_stopped")
 
 
 if __name__ == "__main__":
