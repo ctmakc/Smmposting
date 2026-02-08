@@ -38,6 +38,23 @@ class TriggerScriptRequest(BaseModel):
     forbidden_claims: list[str] = []
 
 
+class TriggerPublishRequest(BaseModel):
+    post_id: str
+    script_id: str
+    platform: str
+    caption: str = ""
+    risk_score: float = 0.0
+    risk_threshold: int = 50
+    qc_status: str = "approved"
+    script_text: str = ""
+    hashtags: list[str] = []
+    asset_urls: dict[str, str] = {}
+    utm_params: dict[str, str] = {}
+    forbidden_topics: list[str] = []
+    forbidden_claim_patterns: list[str] = []
+    competitor_mentions: list[str] = []
+
+
 class WorkflowStatusResponse(BaseModel):
     workflow_id: str
     run_id: str

@@ -19,6 +19,16 @@ class TrendingItem:
     scores: dict = field(default_factory=dict)
 
 
+@dataclass
+class PublishResult:
+    """Result of publishing content to a platform."""
+
+    post_id: str
+    post_url: str
+    published: bool
+    error: str | None = None
+
+
 class PlatformClient(abc.ABC):
     """Abstract base class for platform integrations."""
 
@@ -34,3 +44,17 @@ class PlatformClient(abc.ABC):
     @abc.abstractmethod
     async def fetch_comments(self, url: str, limit: int = 50) -> list[dict]:
         """Fetch comments for a given content URL."""
+
+    @abc.abstractmethod
+    async def publish(
+        self,
+        caption: str,
+        hashtags: list[str],
+        asset_urls: dict[str, str],
+        utm_params: dict[str, str],
+    ) -> PublishResult:
+        """Publish content to the platform."""
+
+    @abc.abstractmethod
+    async def verify_post(self, post_id: str) -> bool:
+        """Verify that a published post exists on the platform."""

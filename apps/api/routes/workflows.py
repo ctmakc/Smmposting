@@ -12,6 +12,7 @@ from apps.api.schemas.workflow import (
     TriggerIngestRequest,
     TriggerIngestResponse,
     TriggerPlanningRequest,
+    TriggerPublishRequest,
     TriggerScriptRequest,
     WorkflowStatusResponse,
 )
@@ -21,6 +22,8 @@ from apps.worker_generate.workflows import TASK_QUEUE as GENERATE_QUEUE
 from apps.worker_generate.workflows import ScriptGenerationInput, ScriptGenerationWorkflow
 from apps.worker_ingest.workflows import TASK_QUEUE as INGEST_QUEUE
 from apps.worker_ingest.workflows import TrendIngestInput, TrendIngestWorkflow
+from apps.worker_publish.workflows import TASK_QUEUE as PUBLISH_QUEUE
+from apps.worker_publish.workflows import PublishInput, PublishWorkflow
 from libs.core.temporal import get_temporal_client
 
 logger = structlog.get_logger()
@@ -104,6 +107,43 @@ async def trigger_script_generation(body: TriggerScriptRequest) -> TriggerIngest
         ),
         id=workflow_id,
         task_queue=GENERATE_QUEUE,
+    )
+
+    logger.info("workflow_triggered", workflow_id=workflow_id, run_id=handle.result_run_id)
+
+    return TriggerIngestResponse(
+        workflow_id=workflow_id,
+        run_id=handle.result_run_id or "",
+        status="started",
+    )
+
+
+@router.post("/publish/trigger", response_model=TriggerIngestResponse, status_code=202)
+async def trigger_publish(body: TriggerPublishRequest) -> TriggerIngestResponse:
+    """Trigger a publish workflow for a scheduled post."""
+    client = await get_temporal_client()
+    workflow_id = f"publish-{body.post_id}-{uuid.uuid4().hex[:8]}"
+
+    handle = await client.start_workflow(
+        PublishWorkflow.run,
+        PublishInput(
+            post_id=body.post_id,
+            script_id=body.script_id,
+            platform=body.platform,
+            caption=body.caption,
+            risk_score=body.risk_score,
+            risk_threshold=body.risk_threshold,
+            qc_status=body.qc_status,
+            script_text=body.script_text,
+            hashtags=body.hashtags,
+            asset_urls=body.asset_urls,
+            utm_params=body.utm_params,
+            forbidden_topics=body.forbidden_topics,
+            forbidden_claim_patterns=body.forbidden_claim_patterns,
+            competitor_mentions=body.competitor_mentions,
+        ),
+        id=workflow_id,
+        task_queue=PUBLISH_QUEUE,
     )
 
     logger.info("workflow_triggered", workflow_id=workflow_id, run_id=handle.result_run_id)

@@ -5,7 +5,7 @@ from __future__ import annotations
 import random
 import uuid
 
-from libs.platform.base import PlatformClient, TrendingItem
+from libs.platform.base import PlatformClient, PublishResult, TrendingItem
 
 _MOCK_NICHES = {
     "tech": [
@@ -95,3 +95,24 @@ class MockPlatformClient(PlatformClient):
             }
             for i in range(min(limit, len(templates)))
         ]
+
+    async def publish(
+        self,
+        caption: str,
+        hashtags: list[str],
+        asset_urls: dict[str, str],
+        utm_params: dict[str, str],
+    ) -> PublishResult:
+        post_id = uuid.uuid4().hex[:16]
+        post_url = (
+            f"https://{self._platform}.example.com"
+            f"/post/{post_id}"
+        )
+        return PublishResult(
+            post_id=post_id,
+            post_url=post_url,
+            published=True,
+        )
+
+    async def verify_post(self, post_id: str) -> bool:
+        return True

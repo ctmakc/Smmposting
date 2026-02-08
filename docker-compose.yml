@@ -124,6 +124,24 @@ services:
         condition: service_started
     restart: unless-stopped
 
+  worker-publish:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile
+      target: base
+    command: ["python", "-m", "apps.worker_publish.worker"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
+      TEMPORAL_HOST: temporal:7233
+      S3_ENDPOINT: http://minio:9000
+      LOG_LEVEL: DEBUG
+    depends_on:
+      postgres:
+        condition: service_healthy
+      temporal:
+        condition: service_started
+    restart: unless-stopped
+
 volumes:
   pgdata:
   minio-data:
