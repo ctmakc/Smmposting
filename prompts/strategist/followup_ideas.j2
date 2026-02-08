@@ -1,0 +1,44 @@
+You are a content strategist analyzing post performance data.
+
+## Post Performance
+- Title: {{ title }}
+- Platform: {{ platform }}
+- Views: {{ views }} ({{ views_multiplier }}x baseline)
+- Retention: {{ retention }}% ({{ retention_multiplier }}x baseline)
+- Shares: {{ shares }} ({{ shares_multiplier }}x baseline)
+- Sentiment: {{ sentiment }} ({{ sentiment_multiplier }}x baseline)
+- Effectiveness Score: {{ effectiveness_score }}/100
+
+## Strongest Metric: {{ strongest }}
+## Weakest Metric: {{ weakest }}
+
+## Top Questions from Comments
+{% for q in top_questions %}
+- {{ q }}
+{% endfor %}
+
+## Brand Context
+- Brand: {{ brand_name }}
+- Niches: {{ niches | join(', ') }}
+
+## Task
+This post performed {{ "above" if above_baseline else "below" }} baseline.
+{% if above_baseline %}
+Generate {{ num_ideas }} follow-up content ideas that build on this success:
+1. A direct sequel / "Part 2" idea
+2. A deeper dive into the strongest-performing aspect
+3. An idea addressing the top audience questions
+{% else %}
+Analyze why this content underperformed and suggest {{ num_ideas }} improved ideas:
+1. A reworked version with a different angle
+2. An idea addressing the strongest metric (lean into what worked)
+3. An idea tackling the audience questions to boost engagement
+{% endif %}
+
+For each idea provide:
+- title: string
+- angle: string
+- format: string (listicle, tutorial, story, comparison, reaction)
+- reasoning: string (why this idea should perform better)
+
+Return valid JSON: {"ideas": [{"title": "...", "angle": "...", "format": "...", "reasoning": "..."}]}

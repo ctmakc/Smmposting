@@ -11,6 +11,7 @@ from temporalio.client import WorkflowExecutionStatus
 from apps.api.schemas.workflow import (
     TriggerIngestRequest,
     TriggerIngestResponse,
+    TriggerMetricsRequest,
     TriggerPlanningRequest,
     TriggerPublishRequest,
     TriggerScriptRequest,
@@ -22,6 +23,8 @@ from apps.worker_generate.workflows import TASK_QUEUE as GENERATE_QUEUE
 from apps.worker_generate.workflows import ScriptGenerationInput, ScriptGenerationWorkflow
 from apps.worker_ingest.workflows import TASK_QUEUE as INGEST_QUEUE
 from apps.worker_ingest.workflows import TrendIngestInput, TrendIngestWorkflow
+from apps.worker_metrics.workflows import TASK_QUEUE as METRICS_QUEUE
+from apps.worker_metrics.workflows import MetricsCollectionInput, MetricsCollectionWorkflow
 from apps.worker_publish.workflows import TASK_QUEUE as PUBLISH_QUEUE
 from apps.worker_publish.workflows import PublishInput, PublishWorkflow
 from libs.core.temporal import get_temporal_client
@@ -144,6 +147,37 @@ async def trigger_publish(body: TriggerPublishRequest) -> TriggerIngestResponse:
         ),
         id=workflow_id,
         task_queue=PUBLISH_QUEUE,
+    )
+
+    logger.info("workflow_triggered", workflow_id=workflow_id, run_id=handle.result_run_id)
+
+    return TriggerIngestResponse(
+        workflow_id=workflow_id,
+        run_id=handle.result_run_id or "",
+        status="started",
+    )
+
+
+@router.post("/metrics/trigger", response_model=TriggerIngestResponse, status_code=202)
+async def trigger_metrics(body: TriggerMetricsRequest) -> TriggerIngestResponse:
+    """Trigger a metrics collection workflow (2h/24h/72h timers)."""
+    client = await get_temporal_client()
+    workflow_id = f"metrics-{body.post_id}-{uuid.uuid4().hex[:8]}"
+
+    handle = await client.start_workflow(
+        MetricsCollectionWorkflow.run,
+        MetricsCollectionInput(
+            post_id=body.post_id,
+            platform=body.platform,
+            platform_post_url=body.platform_post_url,
+            title=body.title,
+            brand_id=body.brand_id,
+            brand_name=body.brand_name,
+            niches=body.niches,
+            num_followup_ideas=body.num_followup_ideas,
+        ),
+        id=workflow_id,
+        task_queue=METRICS_QUEUE,
     )
 
     logger.info("workflow_triggered", workflow_id=workflow_id, run_id=handle.result_run_id)

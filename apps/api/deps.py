@@ -8,8 +8,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from libs.db.repositories.asset import AssetRepository
 from libs.db.repositories.brand import BrandRepository
 from libs.db.repositories.idea import IdeaRepository
+from libs.db.repositories.metrics import MetricsRepository
 from libs.db.repositories.policy import PolicyRepository
 from libs.db.repositories.post import PostRepository
+from libs.db.repositories.run import RunRepository
 from libs.db.repositories.script import ScriptRepository
 from libs.db.session import get_async_session
 
@@ -53,3 +55,15 @@ async def get_asset_repo(
     session: AsyncSession = Depends(get_db),
 ) -> AssetRepository:
     return AssetRepository(session)
+
+
+async def get_metrics_repo(
+    session: AsyncSession = Depends(get_db),
+) -> MetricsRepository:
+    return MetricsRepository(session)
+
+
+async def get_run_repo(
+    session: AsyncSession = Depends(get_db),
+) -> RunRepository:
+    return RunRepository(session)

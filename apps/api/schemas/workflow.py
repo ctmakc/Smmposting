@@ -55,6 +55,17 @@ class TriggerPublishRequest(BaseModel):
     competitor_mentions: list[str] = []
 
 
+class TriggerMetricsRequest(BaseModel):
+    post_id: str
+    platform: str
+    platform_post_url: str
+    title: str
+    brand_id: str
+    brand_name: str
+    niches: list[str] = []
+    num_followup_ideas: int = 3
+
+
 class WorkflowStatusResponse(BaseModel):
     workflow_id: str
     run_id: str

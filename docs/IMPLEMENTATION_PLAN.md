@@ -216,5 +216,5 @@
 | Фаза 2: Temporal + First Workflow | DONE (43 tests total, +21 new) |
 | Фаза 3: LLM + Analysis + Generation | DONE (76 tests total, +33 new) |
 | Фаза 4: Publishing Pipeline | DONE (105 tests total, +29 new) |
-| Фаза 5: Metrics & Learning | Pending |
+| Фаза 5: Metrics & Learning | DONE (138 tests total, +33 new) |
 | Фаза 6: Observability + Hardening | Pending |
