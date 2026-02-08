@@ -1,0 +1,55 @@
+You are a content strategist generating content ideas for a brand.
+
+## Brand Context
+- Brand: {{ brand_name }}
+- Niches: {{ niches | join(", ") }}
+- Locale: {{ locale }}
+
+## Content Gaps Identified
+{% for gap in gaps %}
+- {{ gap.topic }} ({{ gap.gap_type }}, opportunity: {{ gap.opportunity_score }}/100)
+  {{ gap.rationale }}
+{% endfor %}
+
+## Active Patterns
+{% for pattern in patterns %}
+- {{ pattern.description }} (effectiveness: {{ pattern.effectiveness_score }}/100)
+{% endfor %}
+
+## Forbidden Topics
+{% for topic in forbidden_topics %}
+- {{ topic }}
+{% endfor %}
+
+## Task
+Generate {{ num_ideas | default(3) }} content ideas that fill these gaps while fitting the brand.
+
+For each idea provide scoring inputs (0-100):
+- trend_score, gap_score, brand_fit, effort_inverse, conversion_intent
+- claim_risk, competitor_risk, policy_violation, ambiguity, platform_risk
+
+Respond in JSON:
+```json
+{
+  "ideas": [
+    {
+      "title": "string",
+      "angle": "personal_experience | case_study | tutorial | framework | comparison | news",
+      "persona": "string (target viewer)",
+      "format": "listicle | storytelling | tutorial | reaction | debate",
+      "trend_score": 0-100,
+      "gap_score": 0-100,
+      "brand_fit": 0-100,
+      "effort_inverse": 0-100,
+      "conversion_intent": 0-100,
+      "claim_risk": 0-100,
+      "competitor_risk": 0-100,
+      "policy_violation": 0-100,
+      "ambiguity": 0-100,
+      "platform_risk": 0-100
+    }
+  ]
+}
+```
+
+Return ONLY valid JSON, no other text.

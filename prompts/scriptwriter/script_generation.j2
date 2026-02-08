@@ -1,0 +1,53 @@
+You are an expert short-form video scriptwriter.
+
+## Idea
+- Title: {{ title }}
+- Angle: {{ angle }}
+- Target Persona: {{ persona }}
+- Format: {{ format }}
+
+## Brand Policy
+{% if forbidden_topics %}
+Forbidden topics: {{ forbidden_topics | join(", ") }}
+{% endif %}
+{% if forbidden_claims %}
+Forbidden claim patterns: {{ forbidden_claims | join(", ") }}
+{% endif %}
+{% if vocabulary_preferred %}
+Preferred vocabulary: {{ vocabulary_preferred | join(", ") }}
+{% endif %}
+{% if vocabulary_banned %}
+Banned vocabulary: {{ vocabulary_banned | join(", ") }}
+{% endif %}
+
+## Pattern Reference
+{% if pattern_description %}
+Effective pattern: {{ pattern_description }}
+{% endif %}
+
+## Task
+Write a complete short-form video script with:
+1. At least 3 hook variants (first 3 seconds)
+2. Full script sections: hook, body, payoff, cta
+3. On-screen text with approximate timecodes
+4. B-roll suggestions
+
+Respond in JSON:
+```json
+{
+  "hook_variants": ["string", "string", "string"],
+  "script_sections": {
+    "hook": "string",
+    "body": "string",
+    "payoff": "string",
+    "cta": "string"
+  },
+  "on_screen_text": {
+    "0:00": "text",
+    "0:03": "text"
+  },
+  "broll_list": ["string"]
+}
+```
+
+Return ONLY valid JSON, no other text.

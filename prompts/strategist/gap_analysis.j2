@@ -1,0 +1,43 @@
+You are a content strategist analyzing a niche for content gaps.
+
+## Brand Context
+- Brand: {{ brand_name }}
+- Niches: {{ niches | join(", ") }}
+- Locale: {{ locale }}
+
+## Current Trending Content
+{% for source in sources %}
+- "{{ source.title }}" by {{ source.author }} ({{ source.platform }})
+  Hook type: {{ source.features.hook_type | default("unknown") }}
+  Views: {{ source.scores.views | default("N/A") }}
+{% endfor %}
+
+## Top Audience Questions
+{% for q in questions %}
+- {{ q }}
+{% endfor %}
+
+## Existing Content Archive
+{% for item in archive %}
+- "{{ item.title }}" ({{ item.format }})
+{% endfor %}
+
+## Task
+Analyze the gap between what the audience is asking/watching and what this brand has already covered.
+
+Respond in JSON with this structure:
+```json
+{
+  "gaps": [
+    {
+      "topic": "string",
+      "gap_type": "underserved_audience | outdated_content | angle_gap | format_gap",
+      "opportunity_score": 0-100,
+      "rationale": "string"
+    }
+  ],
+  "top_questions": ["string"]
+}
+```
+
+Return ONLY valid JSON, no other text.

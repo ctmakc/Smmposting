@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from apps.api.routes import brands, health, policies, workflows
+from apps.api.routes import brands, health, ideas, policies, scripts, workflows
 from libs.core.config import get_settings
 from libs.core.logging import setup_logging
 from libs.core.temporal import close_temporal_client
@@ -30,6 +30,8 @@ def create_app() -> FastAPI:
     app.include_router(health.router, tags=["health"])
     app.include_router(brands.router, prefix="/brands", tags=["brands"])
     app.include_router(policies.router, prefix="/policies", tags=["policies"])
+    app.include_router(ideas.router, prefix="/ideas", tags=["ideas"])
+    app.include_router(scripts.router, prefix="/scripts", tags=["scripts"])
     app.include_router(workflows.router, prefix="/workflows", tags=["workflows"])
     return app
 

@@ -18,6 +18,26 @@ class TriggerIngestResponse(BaseModel):
     status: str = "started"
 
 
+class TriggerPlanningRequest(BaseModel):
+    brand_id: str
+    brand_name: str
+    niches: list[str]
+    locale: str = "en"
+    num_ideas: int = 3
+    forbidden_topics: list[str] = []
+
+
+class TriggerScriptRequest(BaseModel):
+    idea_id: str
+    title: str
+    angle: str = ""
+    persona: str = ""
+    format: str = "listicle"
+    risk_threshold: int = 50
+    forbidden_topics: list[str] = []
+    forbidden_claims: list[str] = []
+
+
 class WorkflowStatusResponse(BaseModel):
     workflow_id: str
     run_id: str

@@ -1,0 +1,49 @@
+You are a content quality control specialist.
+
+## Script to Review
+Hook variants:
+{% for hook in hook_variants %}
+{{ loop.index }}. {{ hook }}
+{% endfor %}
+
+Script sections:
+- Hook: {{ script_sections.hook }}
+- Body: {{ script_sections.body }}
+- Payoff: {{ script_sections.payoff }}
+- CTA: {{ script_sections.cta }}
+
+## Brand Policy
+Forbidden topics: {{ forbidden_topics | join(", ") if forbidden_topics else "None" }}
+Forbidden claim patterns: {{ forbidden_claims | join(", ") if forbidden_claims else "None" }}
+Banned vocabulary: {{ vocabulary_banned | join(", ") if vocabulary_banned else "None" }}
+Risk threshold: {{ risk_threshold }}/100
+
+## Task
+Review this script for:
+1. Policy violations (forbidden topics, claims, vocabulary)
+2. Unverified claims or guarantees
+3. Competitor mentions (if restricted)
+4. Medical, legal, or financial promises
+5. Platform guideline risks
+
+Respond in JSON:
+```json
+{
+  "approved": true/false,
+  "score": 0-100,
+  "issues": [
+    {
+      "type": "forbidden_topic | claim_risk | vocabulary | competitor | legal",
+      "severity": "critical | warning | suggestion",
+      "description": "string",
+      "location": "hook | body | payoff | cta"
+    }
+  ],
+  "suggestions": ["string"],
+  "forbidden_topics_found": ["string"],
+  "claim_risks": ["string"],
+  "vocabulary_violations": ["string"]
+}
+```
+
+Return ONLY valid JSON, no other text.

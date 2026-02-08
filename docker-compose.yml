@@ -90,6 +90,40 @@ services:
         condition: service_started
     restart: unless-stopped
 
+  worker-analyze:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile
+      target: base
+    command: ["python", "-m", "apps.worker_analyze.worker"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
+      TEMPORAL_HOST: temporal:7233
+      LOG_LEVEL: DEBUG
+    depends_on:
+      postgres:
+        condition: service_healthy
+      temporal:
+        condition: service_started
+    restart: unless-stopped
+
+  worker-generate:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile
+      target: base
+    command: ["python", "-m", "apps.worker_generate.worker"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
+      TEMPORAL_HOST: temporal:7233
+      LOG_LEVEL: DEBUG
+    depends_on:
+      postgres:
+        condition: service_healthy
+      temporal:
+        condition: service_started
+    restart: unless-stopped
+
 volumes:
   pgdata:
   minio-data:
