@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import uuid
 from dataclasses import dataclass, field
 
 import structlog
@@ -103,7 +104,7 @@ async def safety_check_activity(inp: SafetyCheckInput) -> SafetyCheckOutput:
 
             repo = PostRepository(session)
             await repo.update(
-                inp.post_id,
+                uuid.UUID(inp.post_id),
                 publish_status=PublishStatus.FAILED,
             )
             await session.commit()
@@ -121,7 +122,7 @@ async def post_to_platform_activity(inp: PostToPlatformInput) -> PostToPlatformO
         from libs.db.repositories.post import PostRepository
 
         repo = PostRepository(session)
-        await repo.update(inp.post_id, publish_status=PublishStatus.PUBLISHING)
+        await repo.update(uuid.UUID(inp.post_id), publish_status=PublishStatus.PUBLISHING)
         await session.commit()
 
     # Use mock client for now — will be swapped for real clients per platform
@@ -172,10 +173,12 @@ async def finalize_publish_activity(inp: FinalizePublishInput) -> FinalizePublis
 
         post_repo = PostRepository(session)
 
+        post_uuid = uuid.UUID(inp.post_id)
+
         if inp.published:
             # Update post
             await post_repo.update(
-                inp.post_id,
+                post_uuid,
                 publish_status=PublishStatus.PUBLISHED,
                 url=inp.post_url,
                 published_at=datetime.now(UTC),
@@ -183,7 +186,7 @@ async def finalize_publish_activity(inp: FinalizePublishInput) -> FinalizePublis
 
             # Update idea status to PUBLISHED
             post_row = await session.execute(
-                select(Post).where(Post.id == inp.post_id)
+                select(Post).where(Post.id == post_uuid)
             )
             post = post_row.scalar_one_or_none()
             if post:
@@ -202,7 +205,7 @@ async def finalize_publish_activity(inp: FinalizePublishInput) -> FinalizePublis
             status = PublishStatus.PUBLISHED.value
         else:
             await post_repo.update(
-                inp.post_id,
+                post_uuid,
                 publish_status=PublishStatus.FAILED,
             )
             status = PublishStatus.FAILED.value

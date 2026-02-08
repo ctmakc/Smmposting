@@ -20,6 +20,6 @@ class ScriptRepository(BaseRepository[Script]):
         return list(result.scalars().all())
 
     async def get_pending_approval(self) -> list[Script]:
-        stmt = select(Script).where(Script.qc_status == QCStatus.REJECTED)
+        stmt = select(Script).where(Script.qc_status == QCStatus.PENDING)
         result = await self.session.execute(stmt)
         return list(result.scalars().all())

@@ -108,7 +108,7 @@ class TestSafetyGate:
             competitor_mentions=["CompetitorX"],
         )
         assert result.passed is False
-        assert len(result.violations) >= 4  # risk, qc, topic, claim, competitor
+        assert len(result.violations) == 5  # risk, qc, topic, claim, competitor
 
     def test_case_insensitive_matching(self):
         result = self.gate.check(
@@ -121,6 +121,43 @@ class TestSafetyGate:
             competitor_mentions=[],
         )
         assert result.passed is False
+
+    def test_invalid_regex_falls_back_to_plain_text(self):
+        result = self.gate.check(
+            risk_score=20.0,
+            risk_threshold=50,
+            qc_status="approved",
+            script_text="This has [invalid pattern in it.",
+            forbidden_topics=[],
+            forbidden_claim_patterns=[r"[invalid"],  # broken regex
+            competitor_mentions=[],
+        )
+        assert result.passed is False
+        assert any("claim" in v.lower() for v in result.violations)
+
+    def test_invalid_regex_fallback_no_match(self):
+        result = self.gate.check(
+            risk_score=20.0,
+            risk_threshold=50,
+            qc_status="approved",
+            script_text="Totally safe content here.",
+            forbidden_topics=[],
+            forbidden_claim_patterns=[r"[invalid"],  # broken regex, no match
+            competitor_mentions=[],
+        )
+        assert result.passed is True
+
+    def test_empty_script_text(self):
+        result = self.gate.check(
+            risk_score=20.0,
+            risk_threshold=50,
+            qc_status="approved",
+            script_text="",
+            forbidden_topics=["gambling"],
+            forbidden_claim_patterns=[r"guaranteed\s+\d+%"],
+            competitor_mentions=["CompetitorX"],
+        )
+        assert result.passed is True
 
     def test_edge_case_exact_threshold(self):
         result = self.gate.check(

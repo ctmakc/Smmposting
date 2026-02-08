@@ -1,3 +1,14 @@
+x-common-env: &common-env
+  DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
+  TEMPORAL_HOST: temporal:7233
+  TEMPORAL_NAMESPACE: default
+  S3_ENDPOINT: http://minio:9000
+  S3_ACCESS_KEY: minioadmin
+  S3_SECRET_KEY: minioadmin
+  S3_BUCKET: content-factory
+  LLM_PROVIDER: mock
+  LOG_LEVEL: DEBUG
+
 services:
   postgres:
     image: postgres:16-alpine
@@ -64,10 +75,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
-      S3_ENDPOINT: http://minio:9000
-      TEMPORAL_HOST: temporal:7233
-      LOG_LEVEL: DEBUG
+      <<: *common-env
     depends_on:
       postgres:
         condition: service_healthy
@@ -80,9 +88,7 @@ services:
       target: base
     command: ["python", "-m", "apps.worker_ingest.worker"]
     environment:
-      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
-      TEMPORAL_HOST: temporal:7233
-      LOG_LEVEL: DEBUG
+      <<: *common-env
     depends_on:
       postgres:
         condition: service_healthy
@@ -97,9 +103,7 @@ services:
       target: base
     command: ["python", "-m", "apps.worker_analyze.worker"]
     environment:
-      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
-      TEMPORAL_HOST: temporal:7233
-      LOG_LEVEL: DEBUG
+      <<: *common-env
     depends_on:
       postgres:
         condition: service_healthy
@@ -114,9 +118,7 @@ services:
       target: base
     command: ["python", "-m", "apps.worker_generate.worker"]
     environment:
-      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
-      TEMPORAL_HOST: temporal:7233
-      LOG_LEVEL: DEBUG
+      <<: *common-env
     depends_on:
       postgres:
         condition: service_healthy
@@ -131,10 +133,7 @@ services:
       target: base
     command: ["python", "-m", "apps.worker_publish.worker"]
     environment:
-      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
-      TEMPORAL_HOST: temporal:7233
-      S3_ENDPOINT: http://minio:9000
-      LOG_LEVEL: DEBUG
+      <<: *common-env
     depends_on:
       postgres:
         condition: service_healthy
@@ -149,9 +148,7 @@ services:
       target: base
     command: ["python", "-m", "apps.worker_metrics.worker"]
     environment:
-      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/content_factory
-      TEMPORAL_HOST: temporal:7233
-      LOG_LEVEL: DEBUG
+      <<: *common-env
     depends_on:
       postgres:
         condition: service_healthy

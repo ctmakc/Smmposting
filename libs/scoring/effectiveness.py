@@ -74,8 +74,8 @@ class EffectivenessScorer:
 
         score = max(0.0, min(100.0, weighted_score))
 
-        strongest = max(multipliers, key=multipliers.get)  # type: ignore[arg-type]
-        weakest = min(multipliers, key=multipliers.get)  # type: ignore[arg-type]
+        strongest = max(multipliers, key=lambda k: multipliers[k])
+        weakest = min(multipliers, key=lambda k: multipliers[k])
 
         return EffectivenessResult(
             score=round(score, 1),

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import random
+import uuid
 from dataclasses import dataclass, field
 
 import structlog
@@ -141,8 +143,6 @@ async def fetch_metrics_activity(inp: FetchMetricsInput) -> FetchMetricsOutput:
     client = MockPlatformClient(platform=inp.platform)
     comments_data = await client.fetch_comments(inp.platform_post_url, limit=20)
 
-    import random
-
     window_multipliers = {"2h": 1.0, "24h": 3.0, "72h": 5.0}
     mult = window_multipliers.get(inp.window, 1.0)
 
@@ -175,7 +175,7 @@ async def store_metrics_activity(inp: StoreMetricsInput) -> StoreMetricsOutput:
         window_enum = MetricsWindow(inp.window)
 
         metrics = await repo.create(
-            post_id=inp.post_id,
+            post_id=uuid.UUID(inp.post_id),
             window=window_enum,
             views=inp.views,
             watch_time=inp.watch_time,
@@ -248,8 +248,9 @@ async def update_pattern_activity(inp: UpdatePatternInput) -> UpdatePatternOutpu
         from libs.db.models.script import Script
 
         # Navigate: post -> script -> idea -> pattern
+        post_uuid = uuid.UUID(inp.post_id)
         post = (await session.execute(
-            select(Post).where(Post.id == inp.post_id)
+            select(Post).where(Post.id == post_uuid)
         )).scalar_one_or_none()
 
         if not post:
@@ -344,7 +345,7 @@ async def generate_followup_ideas_activity(
             repo = IdeaRepository(session)
             for idea_data in ideas_data[:inp.num_ideas]:
                 idea = await repo.create(
-                    brand_id=inp.brand_id,
+                    brand_id=uuid.UUID(inp.brand_id),
                     title=idea_data.get("title", "Follow-up idea"),
                     angle=idea_data.get("angle", ""),
                     format=idea_data.get("format", "listicle"),
