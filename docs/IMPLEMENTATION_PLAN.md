@@ -218,3 +218,5 @@
 | Фаза 4: Publishing Pipeline | DONE (105 tests total, +29 new) |
 | Фаза 5: Metrics & Learning | DONE (138 tests total, +33 new) |
 | Фаза 6: Observability + Hardening | DONE (164 tests total, +26 new) |
+| Bugfix pass | DONE (186 tests, UUID fixes, Dockerfile, docker-compose) |
+| Alembic + Real LLM clients | DONE (240 tests, +54 new) |
