@@ -5,7 +5,17 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from apps.api.routes import brands, health, ideas, metrics, policies, posts, scripts, workflows
+from apps.api.routes import (
+    brands,
+    health,
+    ideas,
+    metrics,
+    policies,
+    posts,
+    schedules,
+    scripts,
+    workflows,
+)
 from libs.core.config import get_settings
 from libs.core.logging import setup_logging
 from libs.core.middleware import setup_middleware
@@ -36,6 +46,7 @@ def create_app() -> FastAPI:
     app.include_router(posts.router, prefix="/posts", tags=["posts"])
     app.include_router(metrics.router, prefix="/metrics", tags=["metrics"])
     app.include_router(workflows.router, prefix="/workflows", tags=["workflows"])
+    app.include_router(schedules.router, prefix="/schedules", tags=["schedules"])
     setup_middleware(app)
     return app
 

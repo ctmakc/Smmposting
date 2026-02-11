@@ -10,7 +10,7 @@ from temporalio import activity
 
 from libs.db.enums import IdeaStatus, PublishStatus
 from libs.db.session import async_session
-from libs.platform.mock import MockPlatformClient
+from libs.platform.factory import get_platform_client
 from libs.publishing.safety import SafetyGate
 
 logger = structlog.get_logger()
@@ -125,8 +125,8 @@ async def post_to_platform_activity(inp: PostToPlatformInput) -> PostToPlatformO
         await repo.update(uuid.UUID(inp.post_id), publish_status=PublishStatus.PUBLISHING)
         await session.commit()
 
-    # Use mock client for now — will be swapped for real clients per platform
-    client = MockPlatformClient(platform=inp.platform)
+    # Get platform client (real or mock based on config)
+    client = get_platform_client(inp.platform)
 
     result = await client.publish(
         caption=inp.caption,

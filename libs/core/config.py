@@ -35,6 +35,18 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
     anthropic_api_key: str = ""
 
+    # --- Platform credentials ---
+    tiktok_access_token: str = ""
+    youtube_access_token: str = ""
+    youtube_api_key: str = ""
+    instagram_access_token: str = ""
+    instagram_user_id: str = ""
+
+    # --- Auth ---
+    api_key: str = ""  # single static API key (simple deployments)
+    api_keys_json: str = ""  # JSON map {key: [scope, ...]} (production)
+    auth_enabled: bool = False  # disable auth in dev
+
     # --- Observability ---
     sentry_dsn: str = ""
     otel_exporter_otlp_endpoint: str = "http://localhost:4317"

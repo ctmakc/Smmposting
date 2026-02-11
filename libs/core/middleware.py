@@ -102,5 +102,27 @@ class ErrorHandlerMiddleware(BaseHTTPMiddleware):
 
 def setup_middleware(app: FastAPI) -> None:
     """Add all middleware to the FastAPI app (order matters — outer first)."""
+    import json
+
+    from libs.auth import APIKeyAuth
+    from libs.auth.middleware import APIKeyMiddleware
+    from libs.core.config import get_settings
+
     app.add_middleware(ErrorHandlerMiddleware)
     app.add_middleware(RequestLoggingMiddleware)
+
+    # API key auth (outermost — runs last in middleware stack)
+    settings = get_settings()
+    multi_keys: dict[str, list[str]] = {}
+    if settings.api_keys_json:
+        try:
+            multi_keys = json.loads(settings.api_keys_json)
+        except json.JSONDecodeError:
+            logger.error("invalid_api_keys_json, auth will use single key only")
+
+    auth = APIKeyAuth(
+        api_key=settings.api_key,
+        api_keys=multi_keys,
+        enabled=settings.auth_enabled,
+    )
+    app.add_middleware(APIKeyMiddleware, auth=auth)

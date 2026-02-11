@@ -11,7 +11,7 @@ from temporalio import activity
 
 from libs.db.models.source import Source
 from libs.db.session import async_session
-from libs.platform.mock import MockPlatformClient
+from libs.platform.factory import get_platform_client
 
 if TYPE_CHECKING:
     from libs.platform.base import TrendingItem
@@ -45,7 +45,7 @@ async def fetch_trending_activity(inp: FetchTrendingInput) -> FetchTrendingOutpu
 
     all_items: list[TrendingItem] = []
     for platform in inp.platforms:
-        client = MockPlatformClient(platform=platform)
+        client = get_platform_client(platform)
         for niche in inp.niches:
             items = await client.fetch_trending(niche, limit=inp.limit_per_niche)
             all_items.extend(items)

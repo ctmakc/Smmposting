@@ -8,6 +8,15 @@ x-common-env: &common-env
   S3_BUCKET: content-factory
   LLM_PROVIDER: mock
   LOG_LEVEL: DEBUG
+  # Platform credentials (empty = mock mode)
+  TIKTOK_ACCESS_TOKEN: ""
+  YOUTUBE_ACCESS_TOKEN: ""
+  YOUTUBE_API_KEY: ""
+  INSTAGRAM_ACCESS_TOKEN: ""
+  INSTAGRAM_USER_ID: ""
+  # Auth (disabled by default in dev)
+  AUTH_ENABLED: "false"
+  API_KEY: ""
 
 services:
   postgres:
