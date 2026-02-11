@@ -31,6 +31,7 @@ class Settings(BaseSettings):
 
     # --- LLM ---
     llm_provider: str = "openai"
+    llm_model: str = ""  # optional override (e.g. "gpt-4o-mini", "claude-sonnet-4-5-20250929")
     openai_api_key: str = ""
     anthropic_api_key: str = ""
 
