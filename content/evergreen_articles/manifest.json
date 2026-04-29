@@ -1,0 +1,880 @@
+{
+  "generated_from": "INNOVA AI section packs",
+  "article_count": 46,
+  "articles": [
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai",
+      "title": "AI-сервисы под контролем экспертов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai.md",
+      "canonical_section_url": "/ai/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__due-diligence-counterparties",
+      "title": "24/7 due diligence контрагентов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__due-diligence-counterparties.md",
+      "canonical_section_url": "/ai/due-diligence-counterparties/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__contract-pre-audit",
+      "title": "Автоматический первичный аудит договоров: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__contract-pre-audit.md",
+      "canonical_section_url": "/ai/contract-pre-audit/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__document-package-check",
+      "title": "AI-проверка пакета документов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__document-package-check.md",
+      "canonical_section_url": "/ai/document-package-check/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__banking-readiness",
+      "title": "AI-подготовка к открытию банковского счета: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__banking-readiness.md",
+      "canonical_section_url": "/ai/banking-readiness/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__licensing-readiness",
+      "title": "AI-подготовка к лицензированию: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__licensing-readiness.md",
+      "canonical_section_url": "/ai/licensing-readiness/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__lead-processing",
+      "title": "Автообработка лидов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__lead-processing.md",
+      "canonical_section_url": "/ai/lead-processing/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__lead-scoring",
+      "title": "AI-скоринг и квалификация лидов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__lead-scoring.md",
+      "canonical_section_url": "/ai/lead-scoring/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__client-prequalification",
+      "title": "Квалификация клиента до консультации: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__client-prequalification.md",
+      "canonical_section_url": "/ai/client-prequalification/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__document-intake",
+      "title": "AI-document intake для сервисных фирм: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__document-intake.md",
+      "canonical_section_url": "/ai/document-intake/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__follow-up-and-status-control",
+      "title": "AI follow-up и контроль статусов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__follow-up-and-status-control.md",
+      "canonical_section_url": "/ai/follow-up-and-status-control/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__internal-knowledge-base",
+      "title": "AI-база знаний для команды: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__internal-knowledge-base.md",
+      "canonical_section_url": "/ai/internal-knowledge-base/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__process-audit",
+      "title": "Аудит процессов и поиск AI-возможностей: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__process-audit.md",
+      "canonical_section_url": "/ai/process-audit/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "crystal",
+      "brand_name": "Crystal",
+      "slug": "ai__hourly-ai-transformation",
+      "title": "Почасовая AI-трансформация бизнеса: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/crystal/ai__hourly-ai-transformation.md",
+      "canonical_section_url": "/ai/hourly-ai-transformation/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "international-business",
+        "operations"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing",
+      "title": "AI-автоматизация маркетинга и агентских процессов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing.md",
+      "canonical_section_url": "/ai-marketing/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__ai-search-visibility",
+      "title": "Подготовка сайта к AI-поиску и AI-search visibility: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__ai-search-visibility.md",
+      "canonical_section_url": "/ai-marketing/ai-search-visibility/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__lead-qualification-and-routing",
+      "title": "AI-квалификация лидов и маршрутизация заявок: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__lead-qualification-and-routing.md",
+      "canonical_section_url": "/ai-marketing/lead-qualification-and-routing/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__sales-follow-up-automation",
+      "title": "AI-автоматизация follow-up и продаж: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__sales-follow-up-automation.md",
+      "canonical_section_url": "/ai-marketing/sales-follow-up-automation/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__crm-and-workflow-automation",
+      "title": "CRM и workflow automation для маркетинга и продаж: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__crm-and-workflow-automation.md",
+      "canonical_section_url": "/ai-marketing/crm-and-workflow-automation/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__process-audit",
+      "title": "Аудит маркетинговых процессов и поиск AI-возможностей: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__process-audit.md",
+      "canonical_section_url": "/ai-marketing/process-audit/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__for-agencies__lead-intake-automation",
+      "title": "Автообработка лидов для маркетинговых агентств: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__for-agencies__lead-intake-automation.md",
+      "canonical_section_url": "/ai-marketing/for-agencies/lead-intake-automation/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__for-agencies__lead-scoring",
+      "title": "AI-скоринг лидов для маркетинговых агентств: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__for-agencies__lead-scoring.md",
+      "canonical_section_url": "/ai-marketing/for-agencies/lead-scoring/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__for-agencies__brief-and-document-intake",
+      "title": "AI intake по брифам и материалам для агентств: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__for-agencies__brief-and-document-intake.md",
+      "canonical_section_url": "/ai-marketing/for-agencies/brief-and-document-intake/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__for-agencies__status-and-follow-up-automation",
+      "title": "AI follow-up и контроль статусов для агентств: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__for-agencies__status-and-follow-up-automation.md",
+      "canonical_section_url": "/ai-marketing/for-agencies/status-and-follow-up-automation/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__for-agencies__reporting-automation",
+      "title": "AI и reporting automation для маркетинговых агентств: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__for-agencies__reporting-automation.md",
+      "canonical_section_url": "/ai-marketing/for-agencies/reporting-automation/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__for-agencies__internal-knowledge-base",
+      "title": "AI-база знаний для маркетинговой студии: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__for-agencies__internal-knowledge-base.md",
+      "canonical_section_url": "/ai-marketing/for-agencies/internal-knowledge-base/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "mmix",
+      "brand_name": "MMIX",
+      "slug": "ai-marketing__hourly-ai-transformation",
+      "title": "Почасовая AI-трансформация маркетинга и агентских процессов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/mmix/ai-marketing__hourly-ai-transformation.md",
+      "canonical_section_url": "/ai-marketing/hourly-ai-transformation/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "marketing",
+        "automation",
+        "agency-ops"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations",
+      "title": "AI для Web3, crypto и fintech operations: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations.md",
+      "canonical_section_url": "/ai-crypto-operations/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations__ai-compliance-layer",
+      "title": "AI compliance layer для Web3 и crypto бизнеса: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations__ai-compliance-layer.md",
+      "canonical_section_url": "/ai-crypto-operations/ai-compliance-layer/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations__aml-kyc-operations",
+      "title": "AI для AML и KYC operations: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations__aml-kyc-operations.md",
+      "canonical_section_url": "/ai-crypto-operations/aml-kyc-operations/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations__onboarding-and-document-intake",
+      "title": "AI onboarding и document intake для Web3 проектов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations__onboarding-and-document-intake.md",
+      "canonical_section_url": "/ai-crypto-operations/onboarding-and-document-intake/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations__counterparty-due-diligence",
+      "title": "AI due diligence контрагентов для Web3 и crypto: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations__counterparty-due-diligence.md",
+      "canonical_section_url": "/ai-crypto-operations/counterparty-due-diligence/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations__licensing-readiness",
+      "title": "AI licensing readiness для Web3 и crypto бизнеса: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations__licensing-readiness.md",
+      "canonical_section_url": "/ai-crypto-operations/licensing-readiness/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations__vendor-and-tool-risk-review",
+      "title": "AI review вендоров и инструментов для Web3: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations__vendor-and-tool-risk-review.md",
+      "canonical_section_url": "/ai-crypto-operations/vendor-and-tool-risk-review/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations__internal-knowledge-layer",
+      "title": "AI knowledge layer для Web3-команды: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations__internal-knowledge-layer.md",
+      "canonical_section_url": "/ai-crypto-operations/internal-knowledge-layer/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations__process-audit",
+      "title": "Аудит Web3-процессов и поиск AI-возможностей: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations__process-audit.md",
+      "canonical_section_url": "/ai-crypto-operations/process-audit/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "blocons",
+      "brand_name": "Blocons",
+      "slug": "ai-crypto-operations__hourly-ai-transformation",
+      "title": "Почасовая AI-трансформация Web3-процессов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/blocons/ai-crypto-operations__hourly-ai-transformation.md",
+      "canonical_section_url": "/ai-crypto-operations/hourly-ai-transformation/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "web3",
+        "crypto",
+        "compliance"
+      ]
+    },
+    {
+      "brand_slug": "legal",
+      "brand_name": "Legal Solutions",
+      "slug": "ai-law",
+      "title": "AI-право и AI-сервисы под контролем юристов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/legal/ai-law.md",
+      "canonical_section_url": "/ai-law/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "legal",
+        "compliance",
+        "governance"
+      ]
+    },
+    {
+      "brand_slug": "legal",
+      "brand_name": "Legal Solutions",
+      "slug": "ai-law__ai-policy-for-companies",
+      "title": "AI policy для компании: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/legal/ai-law__ai-policy-for-companies.md",
+      "canonical_section_url": "/ai-law/ai-policy-for-companies/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "legal",
+        "compliance",
+        "governance"
+      ]
+    },
+    {
+      "brand_slug": "legal",
+      "brand_name": "Legal Solutions",
+      "slug": "ai-law__contract-pre-review",
+      "title": "Автоматический первичный аудит договоров: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/legal/ai-law__contract-pre-review.md",
+      "canonical_section_url": "/ai-law/contract-pre-review/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "legal",
+        "compliance",
+        "governance"
+      ]
+    },
+    {
+      "brand_slug": "legal",
+      "brand_name": "Legal Solutions",
+      "slug": "ai-law__ai-vendor-risk-review",
+      "title": "Проверка AI-вендоров и LLM-рисков: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/legal/ai-law__ai-vendor-risk-review.md",
+      "canonical_section_url": "/ai-law/ai-vendor-risk-review/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "legal",
+        "compliance",
+        "governance"
+      ]
+    },
+    {
+      "brand_slug": "legal",
+      "brand_name": "Legal Solutions",
+      "slug": "ai-law__privacy-and-data-protection",
+      "title": "Privacy и защита данных при использовании AI: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/legal/ai-law__privacy-and-data-protection.md",
+      "canonical_section_url": "/ai-law/privacy-and-data-protection/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "legal",
+        "compliance",
+        "governance"
+      ]
+    },
+    {
+      "brand_slug": "legal",
+      "brand_name": "Legal Solutions",
+      "slug": "ai-law__ai-in-hr-and-employment",
+      "title": "AI в HR и кадровых процессах: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/legal/ai-law__ai-in-hr-and-employment.md",
+      "canonical_section_url": "/ai-law/ai-in-hr-and-employment/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "legal",
+        "compliance",
+        "governance"
+      ]
+    },
+    {
+      "brand_slug": "legal",
+      "brand_name": "Legal Solutions",
+      "slug": "ai-law__due-diligence-counterparties",
+      "title": "24/7 due diligence контрагентов: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/legal/ai-law__due-diligence-counterparties.md",
+      "canonical_section_url": "/ai-law/due-diligence-counterparties/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "legal",
+        "compliance",
+        "governance"
+      ]
+    },
+    {
+      "brand_slug": "legal",
+      "brand_name": "Legal Solutions",
+      "slug": "ai-law__process-audit",
+      "title": "Аудит процессов и поиск AI-возможностей: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/legal/ai-law__process-audit.md",
+      "canonical_section_url": "/ai-law/process-audit/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "legal",
+        "compliance",
+        "governance"
+      ]
+    },
+    {
+      "brand_slug": "legal",
+      "brand_name": "Legal Solutions",
+      "slug": "ai-law__hourly-ai-transformation",
+      "title": "Почасовая AI-трансформация бизнеса под legal control: практическое применение для бизнеса",
+      "path": "content/evergreen_articles/legal/ai-law__hourly-ai-transformation.md",
+      "canonical_section_url": "/ai-law/hourly-ai-transformation/",
+      "platform_targets": [
+        "medium",
+        "vc_ru",
+        "teletype"
+      ],
+      "tags": [
+        "ai",
+        "legal",
+        "compliance",
+        "governance"
+      ]
+    }
+  ]
+}
